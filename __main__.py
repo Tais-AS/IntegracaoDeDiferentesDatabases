@@ -1,6 +1,9 @@
-from modules.connector import IntegrageCassandra
-from cassandra.cluster import Cluster
+
+from modules.interfaceDB import interage_cassandra
+from modules.interageDB import interage_mysql
 import pandas as pd
+
+
 
 if __name__ == "__main__":
     
@@ -8,50 +11,37 @@ if __name__ == "__main__":
     nome_tabela = 'sistemab'
     
     df = pd.read_csv("Sistema_B_NoSQL.csv", sep=",")
-
-    # Remover arquivo com campo  Vazio
-    df_unico = df.dropna()
-    #print(df_unico)
+    df_mysql=pd.read_csv("Sistema_A_SQL.csv", sep=",")
+    
+    # Colocar valor padrão no nan
+    df.fillna('', inplace=True)
+    df_mysql.fillna('sem_vendedor', inplace=True)
     
     #   Comando para transformar as linhas de dataframe tratado em uma lista de listas
     
-    #lista_df_unico=df_unico.values.tolist()
-    cursor = IntegrageCassandra(database,nome_tabela)
+    cursor = interage_cassandra(database,nome_tabela)
+    cursor_mysql=interage_mysql("root","#Es181192","localhost","oldtech")
+     
+    lista=df.values.tolist()
+    lista_mysql=df_mysql.values.tolist()
+    tpa=('nota_fiscal','vendedor','total')
+    tpv=(5,"Edson",40)
     
-    for linha in range(4):#lista_df_unico:
+    #cursor_mysql.inserir("sistemaa",tpa,tpv)
+    
+    for linha in lista_mysql:#lista_df_unico:
         try:
-            #linha.insert(0,str('uuid()'))        # adiciona string na primeira posição da lista
-            tupla_valores=tuple(linha)      # transformar em tupla para o insert
-            
-            
-            
-            #query_insert=f"INSERT INTO {nome_tabela} (id_vendas, nota_fiscal, vendedor, total) values (uuid(), 1, 'edson', 8);"
-            #query_insert=
-            #print(type(tupla_valores[0]))
-            cursor.insert()
+            #print(linha)
+            cursor_mysql.insert()
+            #print("8")
         except Exception as e:
             print("erro",str(e))
-            
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+    
+   
+    
+    
 
 
 
