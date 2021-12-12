@@ -25,16 +25,15 @@ O objetivo é desenvolver  um código em Python que leia a db SQL, corrija, padr
 - Cronograma apresentando quem fez o que e quando
 - Resolução do Projeto
 
-## Tecnologias utilizadas
 
-| Ferramenta |
+|  Tecnologias utilizadas | |
 | --- | --- |
 |Python
 |Visual Studio Code
 |Meet
 |MySQL
 |Cassandra
-|ProjetGit |
+|Projects Git |
 |  |
 
 ## Orientadores
