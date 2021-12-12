@@ -27,9 +27,9 @@ O objetivo é desenvolver  um código em Python que leia a db SQL, corrija, padr
 
 ## Tecnologias utilizadas
 
-| Ferramenta | Descrição |
+| Ferramenta |
 | --- | --- |
-|`Python`
+|Python
 |Visual Studio Code
 |Meet
 |MySQL
@@ -41,4 +41,4 @@ O objetivo é desenvolver  um código em Python que leia a db SQL, corrija, padr
 
 [Prof Adriano Gomes](https://www.linkedin.com/in/adriannogs/)  
 [Prof Felipe Barroso](https://www.linkedin.com/in/felipe-soares-muylaert-barroso-1a603a116/://www.linkedin.com/in/adrianhttps://www.linkedin.com/in/felipe-soares-muylaert-barroso-1a603a116/)
-# IntegracaoDeDiferentesDatabases
+
