@@ -1,62 +1,30 @@
 
-from modules.interfaceDB import interage_cassandra
-from modules.interageDB import interage_mysql
-import pandas as pd
-
-
+from modules.conector_cassandra import interage_cassandra
+from modules.conector_mysql import interage_mysql
 
 if __name__ == "__main__":
     
-    database = 'oldtech'
-    nome_tabela = 'sistemab'
+    ## 1  Criar conexões com os bancos de dados
     
-    df = pd.read_csv("Sistema_B_NoSQL.csv", sep=",")
-    df_mysql=pd.read_csv("Sistema_A_SQL.csv", sep=",")
+    obj_mysql=interage_mysql("root","#Es181192","localhost","oldtech")
+    obj_cassandra=interage_cassandra('oldtech','sistemab')
+
+    ## 2  Obter dados do banco Mysql e guardar em variável
     
-    # Colocar valor padrão no nan
-    df.fillna('', inplace=True)
-    df_mysql.fillna('sem_vendedor', inplace=True)
+    query="Select * from sistemaa;"
+    guarda_rows=obj_mysql.selecionar(query) # tomar 1000 elementos
+
+    ## 3 Subir dados extraídos do Mysql no Cassandra
     
-    #   Comando para transformar as linhas de dataframe tratado em uma lista de listas
+    for row in guarda_rows:
+        
+        valores_inserir=[row[1],row[2],row[3]]
+        obj_cassandra.insert(valores_inserir)
     
-    cursor = interage_cassandra(database,nome_tabela)
-    cursor_mysql=interage_mysql("root","#Es181192","localhost","oldtech")
-     
-    lista=df.values.tolist()
-    lista_mysql=df_mysql.values.tolist()
-    tpa=('nota_fiscal','vendedor','total')
-    tpv=(5,"Edson",40)
-    
-    #cursor_mysql.inserir("sistemaa",tpa,tpv)
-    
-    for linha in lista_mysql:#lista_df_unico:
-        try:
-            #print(linha)
-            cursor_mysql.insert()
-            #print("8")
-        except Exception as e:
-            print("erro",str(e))
 
     
     
-   
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
 
 
