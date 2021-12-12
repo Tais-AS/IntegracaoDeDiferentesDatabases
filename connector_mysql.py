@@ -20,10 +20,9 @@ class InterfaceDB:
             return con, cursor
         except Exception as e:
             print(str(e))
-        finally:
-            self.desconectar(con, cursor) 
 
-#metodo para selecionar e gerar a query
+
+    #metodo para selecionar e gerar a query
     def selecionar(self, query):
         try:
             con, cursor = self.conectar()
@@ -31,6 +30,8 @@ class InterfaceDB:
             return cursor.fetchall()
         except Exception as e:
             print(str(e))
+        finally:
+            self.desconectar(con, cursor)
 
     def desconectar(self, con, cursor):
         try:
@@ -39,21 +40,23 @@ class InterfaceDB:
             con.close()
         except Exception as e:
             print(str(e))
-        finally:
-            self.desconectar(con, cursor)   
+        
+            
 
-#def desconectar = conector e cursor
+    #def desconectar = conector e cursor
     #metodo para executar a inclusao de dado
-    def executar(self, query):
+    def insert(self, query):
         try:
             con, cursor = self.conectar()
-            result = cursor.execute(query)
-            cursor.close()
-            con.commit()
-            con.close()
-            return result
+            cursor.execute(query)
+            
+            return cursor.fetchall()
+            #cursor.close()
+            #con.commit()
+            #con.close()
+            
         except Exception as e:
-            print(str(e))
+            print("erro insert",str(e))
         finally:
             self.desconectar(con, cursor)
 
@@ -79,3 +82,7 @@ class InterfaceDB:
             con.close()
         except Exception as e:
             print(e)
+
+        
+
+   
