@@ -1,6 +1,6 @@
 import mysql.connector
 
-class InterfaceDB:
+class interage_mysql:
     usuario, senha, host, banco = "", "", "", ""
     
     def __init__(self, usuario, senha, host, banco):
@@ -83,6 +83,9 @@ class InterfaceDB:
         except Exception as e:
             print(e)
 
+        
+
+   
         
 
    
