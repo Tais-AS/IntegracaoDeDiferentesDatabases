@@ -26,7 +26,7 @@ O objetivo é desenvolver  um código em Python que leia a db SQL, corrija, padr
 - Resolução do Projeto
 
 
-| 🛠️ Tecnologias utilizadas | |
+| 🛠️ Tecnologias utilizadas || 
 | --- | --- |
 |Python
 |Visual Studio Code
@@ -38,21 +38,31 @@ O objetivo é desenvolver  um código em Python que leia a db SQL, corrija, padr
 
 # Resolução
 
-### ✅ [Dados da DB  SQL - MySQL](banco_sql_sistemaa.sql)
+### **1º Criar o banco de dados**
 
-- id_vendas: autogerado e obrigatório
-- nota_fiscal: texto e obrigatório
-- vendedor: texto e obrigatório 
-- Total: texto e obrigatório 
+  ####   ✅ [Dados da DB  SQL - MySQL](banco_sql_sistemaa.sql)
+
+    - id_vendas: autogerado e chave primária
+    - nota_fiscal: inteiro (10) 
+    - vendedor: texto (30) 
+    - Total: float
 
 
-### ✅ [Dados da DB NoSQL - Cassandra](banco_cassandra.sql)
+   ####   ✅ [Dados da DB NoSQL - Cassandra](banco_cassandra.sql)
 
-- id_vendas: autogerado e obrigatório
-- nota_fiscal: inteiro
-- vendedor: texto  
-- Total: float
+    - id_vendas:identificador único universal e chave primária
+    - nota_fiscal: inteiro
+    - vendedor: texto  
+    - Total: float
 
+### **2º Inserção no bancos**
+
+- [Tratamento do dados](popularBancos.py)
+
+### **3º Connectores**
+
+- [MySQL](connector_mysql.py)
+- [Cassandra](connector_cassandra.py)
 
 
 
