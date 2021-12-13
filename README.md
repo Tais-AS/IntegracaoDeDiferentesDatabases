@@ -26,14 +26,17 @@ O objetivo é desenvolver  um código em Python que leia a db SQL, corrija, padr
 - Resolução do Projeto
 
 
-| 🛠️ Tecnologias utilizadas || 
-| --- | --- |
-|Python
+| 🛠️ Tecnologias utilizadas |
+
+|:---:|
+
+|Python|
+
 |Visual Studio Code
 |Meet
 |MySQL
 |Cassandra
-|Metodologia Ageis  - Projects Git |
+|Metodologia Ágil  - Projects Git - Kanban|
 |  |
 
 # Resolução
