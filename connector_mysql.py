@@ -1,9 +1,17 @@
 import mysql.connector
-
+#classe com as conexoes no banco de dados utilizando a biblioteca mysql.connector
 class interage_mysql:
     usuario, senha, host, banco = "", "", "", ""
     
     def __init__(self, usuario, senha, host, banco):
+        # """Construtor da classe interage_mysql:
+
+        # Args:
+        #     usuario (string): usuario para conexao ao banco
+        #     senha (string): senha para acesso ao banco
+        #     host (string): string contendo o endereco do host
+        #     banco (string): string contendo o nome do banco
+        # """
         
         try:
             self.usuario = usuario
@@ -12,7 +20,8 @@ class interage_mysql:
             self.banco = banco
         except Exception as e:
             print(str(e))
-
+            
+#conexao com o banco de dados
     def conectar(self):
         try:
             con = mysql.connector.connect(user=self.usuario, password=self.senha, host=self.host, database=self.banco)
