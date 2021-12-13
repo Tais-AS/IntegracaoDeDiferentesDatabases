@@ -27,11 +27,8 @@ O objetivo é desenvolver  um código em Python que leia a db SQL, corrija, padr
 
 
 | 🛠️ Tecnologias utilizadas |
-
 |:---:|
-
 |Python|
-
 |Visual Studio Code
 |Meet
 |MySQL
