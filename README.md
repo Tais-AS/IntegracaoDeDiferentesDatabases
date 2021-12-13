@@ -64,6 +64,9 @@ O objetivo é desenvolver  um código em Python que leia a db SQL, corrija, padr
 - [MySQL](connector_mysql.py)
 - [Cassandra](connector_cassandra.py)
 
+### **4º Principal**
+
+- [Main](__main__.py)
 
 
 # **Orientadores**
